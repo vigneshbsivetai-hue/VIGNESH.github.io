@@ -1,36 +1,21 @@
-// Toggle mobile menu
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector("header ul");
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navList = document.querySelector('nav ul');
 
-// Smooth scroll
-document.querySelectorAll("a[href^='#']").forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
+  // Toggle the mobile menu on click
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('show');
     });
-    navLinks.classList.remove("show");
-  });
-});
-
-// Profile picture upload
-const profilePic = document.getElementById("profile-pic");
-const fileInput = document.getElementById("fileInput");
-
-profilePic.addEventListener("click", () => {
-  fileInput.click(); // Open file dialog when image clicked
-});
-
-fileInput.addEventListener("change", (event) => {
-  const file = event.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      profilePic.src = e.target.result; // Replace image with uploaded one
-    };
-    reader.readAsDataURL(file);
   }
+
+  // Close the mobile menu when a link is clicked
+  const navLinks = document.querySelectorAll('nav ul li a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navList.classList.contains('show')) {
+        navList.classList.remove('show');
+      }
+    });
+  });
 });
