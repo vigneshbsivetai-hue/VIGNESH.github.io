@@ -178,7 +178,7 @@ section h2::after {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 6px 20px var(--shadow-color);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   border: 1px solid var(--border-color);
 }
 
@@ -201,7 +201,8 @@ section h2::after {
   border-radius: 8px;
   border: 2px solid var(--secondary-accent);
   box-shadow: 0 0 15px var(--secondary-accent);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 #certificates img:hover {
@@ -232,7 +233,7 @@ section h2::after {
   font-family: 'Poppins', sans-serif;
   color: var(--text-color-light);
   outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .contact input:focus,
@@ -250,7 +251,7 @@ section h2::after {
   font-weight: 700;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .contact button:hover {
